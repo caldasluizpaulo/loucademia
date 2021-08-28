@@ -2,10 +2,20 @@ package br.com.softblue.loucademia.domain.acesso;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import br.com.softblue.loucademia.domain.aluno.Aluno;
 
+@Entity
+@Table(name = "ENTRADAS_SAIDAS")
 public class Acesso {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private Aluno aluno;
 	private LocalDateTime entrada;
